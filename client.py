@@ -26,7 +26,7 @@ def get_remote_ip(host):
 
 #send data to server
 def send_data(serversocket, payload):
-    print("Sending payload")    
+    print("Sending payload")
     try:
         serversocket.sendall(payload.encode())
     except socket.error:
@@ -40,6 +40,7 @@ def main():
         host = 'www.google.com'
         port = 80
         payload = f'GET / HTTP/1.0\r\nHost: {host}\r\n\r\n'
+        # payload = f'GET / HTTP/1.0\r\nHost: \r\n\r\n'
         buffer_size = 4096
 
         #make the socket, get the ip, and connect
